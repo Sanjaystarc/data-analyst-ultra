@@ -14,8 +14,9 @@ from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.tools import tool
-from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain.agents.agent import AgentExecutor
+from langchain.agents.tool_calling_agent.base import create_tool_calling_agent
 from langchain_community.chat_message_histories import ChatMessageHistory
 
 warnings.filterwarnings("ignore")
@@ -35,7 +36,7 @@ def set_dataframe(df, profile):
 
 def get_llm(api_key: str):
     return ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
+        model="gemini-2.5-flash",
         google_api_key=api_key,
         temperature=0.3,
         convert_system_message_to_human=True,
