@@ -83,33 +83,33 @@ Shows you its full reasoning chain 🔍
 ### The Agentic Loop
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                   DATAMIND AGENT                    │
-│                                                     │
-│  User Question                                      │
-│       │                                             │
-│       ▼                                             │
-│  ┌─────────┐    ┌──────────────────────────────┐   │
-│  │  THINK  │───▶│  Which tools do I need?      │   │
-│  └─────────┘    │  What order should I use?    │   │
-│                 └──────────────────────────────┘   │
-│       │                                             │
-│       ▼                                             │
-│  ┌─────────┐    ┌──────────────────────────────┐   │
-│  │   ACT   │───▶│  profile_data                │   │
-│  └─────────┘    │  analyze_column              │   │
-│                 │  find_correlations           │   │
-│       │         │  detect_anomalies            │   │
-│       ▼         │  run_aggregation             │   │
-│  ┌─────────┐    │  generate_insight_report     │   │
-│  │ REFLECT │    │  recommend_chart             │   │
-│  └─────────┘    └──────────────────────────────┘   │
-│       │                                             │
-│       ▼                                             │
-│  ┌─────────┐                                        │
-│  │SYNTHESIZE│──▶  Final Answer + Chart             │
-│  └─────────┘                                        │
-└─────────────────────────────────────────────────────┘
++-------------------------------------------------------+
+|                    DATAMIND AGENT                     |
++-------------------------------------------------------+
+|                                                       |
+|   User Question                                       |
+|        |                                              |
+|        v                                              |
+|   +---------+    +--------------------------------+   |
+|   |  THINK  |───>|  Which tools do I need?        |   |
+|   +---------+    |  What order should I use?      |   |
+|        |         +--------------------------------+   |
+|        v                                              |
+|   +---------+    +--------------------------------+   |
+|   |   ACT   |───>|  [1] profile_data              |   |
+|   +---------+    |  [2] analyze_column            |   |
+|        |         |  [3] find_correlations         |   |
+|        v         |  [4] detect_anomalies          |   |
+|   +---------+    |  [5] run_aggregation           |   |
+|   | REFLECT |───>|  [6] generate_insight_report   |   |
+|   +---------+    |  [7] recommend_chart           |   |
+|        |         +--------------------------------+   |
+|        v                                              |
+|   +----------+                                        |
+|   |SYNTHESIZE|───>  Final Answer + Chart              |
+|   +----------+                                        |
+|                                                       |
++-------------------------------------------------------+
 ```
 
 ### The 7 Agent Tools
@@ -130,7 +130,7 @@ Shows you its full reasoning chain 🔍
 
 | Layer | Technology | Version | Purpose |
 |---|---|---|---|
-| **LLM** | Google Gemini 1.5 Flash | Latest | Reasoning & language understanding |
+| **LLM** | Google Gemini 2.5 Flash | Latest | Reasoning & language understanding |
 | **Agent Framework** | LangChain | 0.3.7 | Tool calling, agent loop, memory |
 | **Agent Type** | Tool Calling Agent | — | Autonomous multi-step execution |
 | **Memory** | LangChain Conversation Memory | — | Context retention across questions |
